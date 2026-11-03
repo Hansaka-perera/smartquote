@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e9edf0; --panel: #ffffff; --sunk: #f3f6f8; --ink: #1b2430; --mute: #5b6875; --line: #d3dae0;
+  --accent: #2f5d7c; --accent-ink: #ffffff; --ok: #2e7d5b; --warn: #b7791f; --bad: #b3412f;
+}
+.dark {
+  --bg: #11161c; --panel: #1a2129; --sunk: #141a20; --ink: #e6ebef; --mute: #93a1ae; --line: #2b3540;
+  --accent: #6fa8cc; --accent-ink: #0d1820; --ok: #5fbf94; --warn: #e0a84a; --bad: #e07a66;
+}
+html, body, #root { height: 100%; }
+body { @apply bg-bg text-ink font-sans text-[14px]; font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+@layer components {
+  .inp { @apply w-full rounded border border-line bg-panel px-2 py-1.5 text-ink; }
+  .inp:disabled { @apply bg-sunk text-mute; }
+  .btn { @apply inline-flex items-center justify-center gap-1 rounded border border-line bg-panel px-3 py-1.5 text-ink hover:bg-sunk disabled:opacity-50; }
+  .btn-primary { @apply border-accent bg-accent text-accent-ink hover:opacity-90 hover:bg-accent; }
+  .btn-danger { @apply text-bad; }
+  .btn-sm { @apply px-2 py-1 text-[13px]; }
+  .card { @apply rounded border border-line bg-panel; }
+  .th { @apply bg-sunk px-2 py-1.5 text-left font-medium text-mute; }
+  .td { @apply border-t border-line px-2 py-1.5; }
+  .num { @apply text-right; }
+  .label { @apply mb-1 block text-[12px] text-mute; }
+}

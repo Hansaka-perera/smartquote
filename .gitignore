@@ -1,0 +1,6 @@
+backend/.venv/
+frontend/node_modules/
+data/*.db
+data/logo.png
+__pycache__/
+.pytest_cache/
